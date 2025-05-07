@@ -18,14 +18,47 @@ async function main() {
   let veryHot = "Hace mucho calor";
   let noData = "No se cumplen los valores de búsqueda";
 
+  const question = "¿Desea alguna recomendación? SI/NO: ";
+
+  let noThanks = "Que tenga buen día";
+  let answer1 = "Salga abrigado";
+  let answer2 = "Use ropa holgada";
+  let answer3 = "Manténgase hidratado";
+  let answer4 = "Evite exponerse al sol";
+
+
   if (temperatura < 10 && temperatura > 0) {
     console.log(cold);
+    const recomend = await ask (question);
+      if(recomend === "SI"){
+        console.log(answer1);
+      } else {
+        console.log(noThanks);
+      }
   } else if (temperatura >= 10 && temperatura <= 20) {
     console.log(template);
+    recomend = await ask (question);
+    if(recomend === "SI"){
+      console.log(answer2);
+    } else {
+      console.log(noThanks);
+    }
   } else if (temperatura >= 21 && temperatura <= 30) {
     console.log(hot);
+    recomend = await ask (question);
+    if(recomend === "SI"){
+      console.log(answer3);
+    } else {
+      console.log(noThanks);
+    }
   } else if (temperatura > 30) {
     console.log(veryHot);
+    recomend = await ask (question);
+    if(recomend === "SI"){
+      console.log(answer4);
+    } else {
+      console.log(noThanks);
+    }
   } else {
     console.log(noData);
   }
