@@ -2,7 +2,8 @@
 const { ask } = require('../helpers/input');
 
 async function main() {
-  const number = Number(await ask("Ingresa un número:"));
+  const number1 = Number(await ask("Ingresa un número:"));
+  const number2= Number(await ask("Ingresa un número:"));
 
   /*
   if (number % 3 === 0 && number % 5 === 0) {
@@ -12,7 +13,7 @@ async function main() {
   } else if (number % 5 === 0) {
     console.log("Múltiplo de 5");
   } else {
-    console.log("No es múltiplo de 3 ni de 5");
+    console.log("Es múltiplo de 3 y 5");
   }
     */
 
