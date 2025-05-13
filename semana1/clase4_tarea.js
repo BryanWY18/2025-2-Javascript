@@ -1,6 +1,6 @@
 // Ejercicio: Pedir al usuario su fecha de nacimiento
 //
-// Instrucciones:
+// Instrucciones: q
 // 1. Mostrar en pantalla los días equivalentes a la edad actual del usuario
 // 2. Mostrar en pantalla los meses equivalentes a la edad actual del usuario
 // 3. Mostrar los años que tiene el usuario.
@@ -49,7 +49,6 @@ async function main() {
     console.log("Has vivido "+totalDays+" días");
     console.log("Has vivido "+totalMonths+" meses");
     console.log("Tienes "+totalYears+" años");
-
 }
 
 main();
