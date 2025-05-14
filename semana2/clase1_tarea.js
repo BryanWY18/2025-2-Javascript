@@ -9,7 +9,6 @@ async function main() {
   }
   
   let limite = Number(await ask("Hasta que numero quieres contar: "));
-  let i = 1;
   
 //  while (i <= limite) {
 //    if(i%2===0){
@@ -22,16 +21,16 @@ async function main() {
 //    i++;
 //  }
 
-  for(i; i<=limite;i++){
-    if(i%2===0){
-        console.log(i);
+  for(let n = 1; n<=limite;n++){
+    if(n%2===0){
+        console.log(n);
         await sleep(1000);
     }else{
-        console.log(`${i} no es par`)
+        console.log(`${n} no es par`)
         await sleep(1000);
     }
   }
-  
+
 }
 
 main();
