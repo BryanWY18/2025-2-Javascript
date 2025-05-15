@@ -51,8 +51,8 @@ async function main() {
             if(frutas.length==0){
                 console.log("\n No hay frutas registradas\n")
             }else{
-                console.log("\n Estas son las frutas registradas:")
-                console.log(`\n ${frutas}\n`);
+                console.log("\n Estas son las frutas registradas:\n")
+                frutas.forEach((fruta)=>console.log(` *${fruta}`));
             }
         }else if(option=="4"){
             console.log(`\n Gracias por usar el programa\n`)
