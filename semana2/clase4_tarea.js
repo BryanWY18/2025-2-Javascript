@@ -15,7 +15,6 @@
 
 const { ask } = require('../helpers/input');
 
-
 function promedio(numeros) {
   let total = 0;
   for (let i = 0; i < numeros.length; i++) {
@@ -38,43 +37,42 @@ function aprobados(numeros){
     return {totalAprobado, totalNoAprobados}
 };
 
-function obtenerMayor(numeros) {
+function obtenerMayorMenor(numeros) {
     let mayor = numeros[0];
+    let menor = numeros[0];
     for (let i = 0; i < numeros.length; i++) {
         if (numeros[i] > mayor) {
             mayor = numeros[i];
+        }else if(numeros[i]< menor){
+            menor = numeros[i];
         }
-    }
-    return mayor;
+    };
+    return {mayor, menor};
 };
-
-function obtenerMenor(numeros){
-    let menor = numeros[0];
-    for (let i = 0; i < numeros.length; i++) {
-        if (numeros[i] < menor) {
-        menor = numeros[i];
-        }
-    }
-    return menor;
-}
 
 function analizarCalificaciones(numeros){
     const promedioValor=promedio(numeros);
     const aprobadosValor=aprobados(numeros);
-    const califAlta=obtenerMayor(numeros);
-    const califBaja=obtenerMenor(numeros);
+    const califMayMen=obtenerMayorMenor(numeros);
 
-    return {promedioValor, aprobadosValor, califAlta, califBaja};
+    return {promedioValor, aprobadosValor, califMayMen};
 }
 
 async function main() {
 
     const calif=[];
     
-    while(calif.length<10){
-        const addCalif=Number(await ask("Añada una calificación (mínimo 10 registros): "));
-        calif.push(addCalif);
-        continue;
+    console.log("Añada una calificación,\nDeben ser en múltiplos de 10, del 10 al 100\nEscriba ENTER cuando termine el registro para ejecutar programa");
+
+    while(true){
+        addCalif=(await ask("*"));
+        if(addCalif!=="ENTER"){
+            let newCalif=Number(addCalif);
+            calif.push(newCalif);
+            continue;
+        }else{
+            break;
+        }
     }
 
     const resumen=analizarCalificaciones(calif);
@@ -82,8 +80,8 @@ async function main() {
     console.log(`Promedio general = ${resumen.promedioValor}`);
     console.log(`La cantidad de aprobados son: ${resumen.aprobadosValor.totalAprobado.length}`);
     console.log(`La cantidad de reprobados son: ${resumen.aprobadosValor.totalNoAprobados.length}`);
-    console.log(`La calificación mayor es: ${resumen.califAlta}`);
-    console.log(`La calificación menor es: ${resumen.califBaja}`);
+    console.log(`La calificación mayor es: ${resumen.califMayMen.mayor}`);
+    console.log(`La calificación menor es: ${resumen.califMayMen.menor}`);
 };
 
 main();
