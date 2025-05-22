@@ -56,7 +56,7 @@ function analizarCalificaciones(numeros){
     const califMayMen=obtenerMayorMenor(numeros);
 
     return {promedioValor, aprobadosValor, califMayMen};
-}
+};
 
 async function main() {
 
@@ -79,7 +79,9 @@ async function main() {
 
     console.log(`Promedio general = ${resumen.promedioValor}`);
     console.log(`La cantidad de aprobados son: ${resumen.aprobadosValor.totalAprobado.length}`);
+    console.log(resumen.aprobadosValor.totalAprobado);
     console.log(`La cantidad de reprobados son: ${resumen.aprobadosValor.totalNoAprobados.length}`);
+    console.log(resumen.aprobadosValor.totalNoAprobados);
     console.log(`La calificación mayor es: ${resumen.califMayMen.mayor}`);
     console.log(`La calificación menor es: ${resumen.califMayMen.menor}`);
 };
