@@ -40,18 +40,17 @@ function displayStudents(){
 };
 
 function updateAverage(){
-    if(students.length==0){
+    if(students.length===0){
         return;
     }
     let total=0;
-    for(let j; j<students.length;j++){
+    for(let j=0; j<students.length;j++){
         total=total+students[j].grade;
     }
     let avg=total/students.length;
-    console.log(avg, total)
     document.getElementById("averageDisplay").textContent=`Average Grade: ${avg}`;
-}
+};
 
-saveToLocalStorage(){
+function saveToLocalStorage(){
     localStorage.setItem("students", JSON.stringify(students));
 };
