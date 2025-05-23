@@ -13,7 +13,7 @@ async function main() {
   } else if (number % 5 === 0) {
     console.log("Múltiplo de 5");
   } else {
-    console.log("Es múltiplo de 3 y 5");
+    console.log("No es múltiplo de 3 y 5");
   }
     */
 
