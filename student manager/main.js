@@ -51,3 +51,7 @@ function updateAverage(){
     console.log(avg, total)
     document.getElementById("averageDisplay").textContent=`Average Grade: ${avg}`;
 }
+
+saveToLocalStorage(){
+    localStorage.setItem("students", JSON.stringify(students));
+};
